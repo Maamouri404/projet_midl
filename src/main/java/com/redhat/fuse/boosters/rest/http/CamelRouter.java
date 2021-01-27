@@ -17,7 +17,7 @@ public class CamelRouter extends RouteBuilder {
         // @formatter:off
         restConfiguration()
                 .apiContextPath("/api-doc")
-                .apiProperty("api.title", "Greeting REST API")
+                .apiProperty("api.title", "Taher's REST API")
                 .apiProperty("api.version", "1.0")
                 .apiProperty("cors", "true")
                 .apiProperty("base.path", "camel/")
@@ -27,7 +27,7 @@ public class CamelRouter extends RouteBuilder {
             .component("servlet")
             .bindingMode(RestBindingMode.json);
         
-        rest("/greetings").description("Greeting to {name}")
+        rest("/Maamouri").description("Greeting to {name}")
             .get("/{name}").outType(Greetings.class)
                 .route().routeId("greeting-api")
                 .to("direct:greetingsImpl");
